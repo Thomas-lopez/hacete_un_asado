@@ -131,86 +131,67 @@ li{
 
 .fotos__grid{
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    width: 80vw;
+    height: 140vh;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr ;
-    grid-template-areas:"asado chinchulines picada" 
-                        "mollejas matambre costilla"
+    grid-template-areas:"asado chinchulines costilla" 
+                        "tabla-achuras mate-asado costilla"
                         "tabla-achuras mate-asado chorizo-morcilla";   
                 }                                      
 
 
-.asado{
-    grid-area: asado;
-    background-image: url("../recursos/asado.jpeg");
+.grid__estilos{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    }
+    margin: 10px;
+}
+
+.asado{
+    grid-area: asado;
+    background-image: url("../recursos/asado.jpeg");
+}
+
 
 .chinchulines{
     grid-area: chinchulines;
     background-image: url("../recursos/chinchulines.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .picada{
     grid-template-areas: picada;
     background-image: url("../recursos/picada.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .mollejas{
     grid-area: mollejas;
     background-image: url("../recursos/mollejas.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .matambre{
     grid-area: matambre;
     background-image: url("../recursos/matambre.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .costilla{
-        grid-area: costilla;
-        background-image: url("../recursos/costilla.jpg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+    grid-area: costilla;
+    background-image: url("../recursos/costilla.jpg");
 }
 
 .tabla-achuras{
     grid-area: tabla-achuras;
     background-image: url("../recursos/tabla-achuras.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .mate-asado{
     grid-area: mate-asado;
     background-image: url("../recursos/mate-asado.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .chorizo-morcilla{
     grid-area: chorizo-morcilla;
     background-image: url("../recursos/chorizo-morcilla.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 footer{
