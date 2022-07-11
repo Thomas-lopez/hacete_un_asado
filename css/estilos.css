@@ -25,6 +25,14 @@ body{
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
+.header__lista:hover{
+    transform: scale(1.10,1.10);
+    transition: all 1s;
+    color: aliceblue;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 header{
     color:white;
@@ -249,6 +257,15 @@ footer{
     .img__final{
         width: 80%;
     }
+
+    .imagen__logo {
+    width: 100vh;
+    height: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 }
 
