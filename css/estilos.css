@@ -212,6 +212,18 @@ footer{
 /* MEDIA DE CELULAR */
 @media (min-width: 320px) and (max-width:575px) {
     
+    header{
+        justify-content: space-between;
+    }
+
+    .texto__principal{
+        font-size: 8px;
+    }
+
+    .header__lista{
+        flex-wrap: wrap;
+    }
+
     .fotos__grid{
         display: grid;
         width: 80vw;
@@ -230,9 +242,20 @@ footer{
         margin: 1px;
     }
 
+    .img__cambiar{
+        width: 80%;
+    }
+
+    .img__final{
+        width: 80%;
+    }
+
 }
 
 /* MEDIA DE TABLET */
 @media (min-width: 576px) and (max-width:992px) {
 
+    .img__cambiar{
+        width: 80%;
+    }
 }
