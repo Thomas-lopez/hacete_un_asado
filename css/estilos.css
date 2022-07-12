@@ -80,6 +80,7 @@ header{
     float: left;
 }
 
+
 li{
     display:flex;
     justify-content: center;
@@ -125,7 +126,7 @@ li{
     }
 
 .section__principal{
-    height: 500px;
+    height: 200px;
 }
 
 .section__principal__nosotros{
