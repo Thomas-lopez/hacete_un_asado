@@ -10,7 +10,11 @@ h1{
 h2{
     color: white;
     font-family: 'Bree Serif', serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 body{
     background-color: #1a1a1a;
@@ -25,6 +29,7 @@ body{
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
+/* ANIMACION MENU */
 .header__lista:hover{
     transform: scale(1.10,1.10);
     transition: all 1s;
@@ -78,7 +83,11 @@ header{
     width: 25px;
     height: 25px;
     float: left;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 
 li{
@@ -107,7 +116,11 @@ li{
 .texto__redes{
     color: white;
     font-family: 'Roboto', sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .texto__info{
     color: white;
@@ -127,12 +140,23 @@ li{
 
 .section__principal{
     height: 200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 
 .section__principal__nosotros{
     padding: 0 20px 0 20px;
 }
 .section__fotos{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info__contacto{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -161,7 +185,6 @@ li{
     grid-area: asado;
     background-image: url("../recursos/asado.jpeg");
 }
-
 
 .chinchulines{
     grid-area: chinchulines;
