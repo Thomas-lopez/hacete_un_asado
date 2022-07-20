@@ -14,12 +14,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/estilos.css">
         <title>HUA</title>
     </head>
     <body>
         <header>
-            <a class="texto__principal" href="../index.html"><h1>HACETE UN ASADO</h1></a>
+            <a class="texto__principal" href="../index.html"><h2>HACETE UN ASADO</h2></a>
             <nav> 
                 <!-- MENU -->                       
                 <ul class="header__lista">
@@ -32,24 +34,45 @@
         </header>
         <main>
             <hr>
-            <section>
-                <h1 class="texto__destacado">CONTENIDO</h1>
-            </section>
-            <!-- GALERIA DE FOTOS -->
-            <section class="section__fotos">
-                <div class="fotos__grid">
-                    <div class="costilla grid__estilos" alt= "Costilla de vaca"></div>
-                    <div class="mate-asado grid__estilos" alt="Mate y asado una tradicion Argentina"></div>
-                    <div class="tabla-achuras grid__estilos" alt="Tabla de achuras y costillar de vaca"></div>
-                    <div class="chinchulines grid__estilos" alt="Achura"></div>
-                    <div class="matambre grid__estilos" alt="Matambre de vaca a la pizza"></div>
-                    <div class="mollejas grid__estilos" alt=" Achura mollejas"></div>
-                    <div class="chorizo-morcilla grid__estilos" alt="Chorizos y morcillas"></div>
-                    <div class="picada grid__estilos" alt="Tabla de picada de fiambres"></div>
-                    <div class="asado grid__estilos" alt="Parrillada"></div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="../recursos/asado.jpeg " class="carrousel__fotos d-block w-50 mx-auto img-fluid" alt="Asado">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../recursos/chinchulines.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Chinchulines">
                 </div>
-            </section>               
-            <p class="texto__fotos">Contenido de produccion propia</p>
+                <div class="carousel-item">
+                    <img src="../recursos/chorizo-morcilla.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Chorizos y Morcilla">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/costilla.jpg" class="carrousel__fotos d-block w-50 mx-auto" alt="Costilla">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/matambre.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Matambre a la pizza">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/mate-asado.jpg" class="carrousel__fotos d-block w-50 mx-auto" alt="Mate y asado">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/mollejas.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Mollejas">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/picada.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Tabla de picada">
+                </div>
+                <div class="carousel-item">
+                    <img src="../recursos/tabla-achuras.jpg" class="carrousel__fotos d-block w-50 mx-auto" alt="Tabla de achuras">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
             <hr>
         </main>
         <footer>
@@ -58,5 +81,7 @@
                 <span> Copyright © 2022</span>  
             </ul>
         </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     </body>
 </html>
