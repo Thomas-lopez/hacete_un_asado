@@ -1,0 +1,16 @@
+footer{
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    .footer{
+        &__texto{
+            text-align: center;
+        }
+
+        &__texto--destacado{
+            margin-bottom:5px;
+        }
+}
+}
