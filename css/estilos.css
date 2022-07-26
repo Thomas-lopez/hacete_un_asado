@@ -3,11 +3,14 @@ footer {
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  footer .footer__texto {
-    text-align: center; }
-  footer .footer__texto--destacado {
-    margin-bottom: 5px; }
+  align-items: center;
+  border-top: solid 1px white; }
+
+footer .footer__texto {
+  text-align: center; }
+
+footer .footer__texto--destacado {
+  margin-bottom: 5px; }
 
 h1 {
   font-family: 'Bree Serif', serif;
@@ -32,21 +35,23 @@ body {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   font-size: larger;
-  margin-top: 5px;
-  /* ANIMACION MENU */ }
-  .header__lista:hover {
-    transform: scale(1.1, 1.1);
-    transition: all 1s;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+  margin-top: 5px; }
+
+/* ANIMACION MENU */
+.header__lista:hover {
+  transform: scale(1.1, 1.1);
+  transition: all 1s;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 header {
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  border-bottom: solid 1px white; }
 
 .imagen__logo {
   width: 500px;
@@ -76,13 +81,15 @@ header {
   display: block;
   margin: 0px auto; }
 
-.texto__contacto__img {
+.texto_contacto_img {
   width: 25px;
   height: 25px;
   float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  margin-right: 10px;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; 
+     */ }
 
 li {
   display: flex;
@@ -121,12 +128,11 @@ li {
   text-decoration: none;
   font-family: 'Bree Serif', serif; }
 
-.section__principal {
-  height: 200px;
-  display: flex;
-  flex-direction: column; }
-
-.section__principal__nosotros {
+/* .section__principal {
+    height: 200px;
+    display: flex;
+    flex-direction: column; } */
+.section_principal_nosotros {
   padding: 0 20px 0 20px; }
 
 .section__fotos {
@@ -142,8 +148,19 @@ li {
   height: 500px; }
 
 .formulario__uno {
+  width: 400px;
+  margin: 20px; }
+
+.section__contacto {
   display: flex;
-  flex-direction: row; }
+  justify-content: center;
+  align-items: center; }
+
+.section_contactoredes_sociales, .section_contacto_informacion {
+  margin: 20px; }
+
+.section_contacto_redes_sociales {
+  margin-top: 50px; }
 
 .formulario__texto {
   color: white; }
