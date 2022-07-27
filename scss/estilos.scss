@@ -13,7 +13,7 @@ footer .footer__texto {
 
 footer .footer__texto--destacado {
     margin-bottom: 5px; 
-}
+} 
 
 h1 {
     font-family: 'Bree Serif', serif;
@@ -36,13 +36,20 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+}
+
+.header__lista__link{
+    color: white;
     text-decoration: none;
     font-size: larger;
-    margin-top: 5px;
+}
+
+.navbar-toggler{
+    background-color: white;
 }
 
   /* ANIMACION MENU */ 
-.header__lista:hover {
+.header__lista__link:hover {
     transform: scale(1.1, 1.1);
     transition: all 1s;
     color: white;
@@ -87,7 +94,7 @@ header {
     display: block;
     margin: 0px auto; }
 
-.texto_contacto_img {
+.texto__contacto__img {
     width: 25px;
     height: 25px;
     float: left;
@@ -141,7 +148,7 @@ li {
     display: flex;
     flex-direction: column; } */
 
-.section_principal_nosotros {
+.section__principal__nosotros {
     padding: 0 20px 0 20px; }
 
 .section__fotos {
@@ -167,11 +174,11 @@ li {
     align-items: center;
 }
 
-.section_contactoredes_sociales, .section_contacto_informacion{
+.section__contacto__redes_sociales, .section__contacto__informacion{
     margin: 20px;
 }
 
-.section_contacto_redes_sociales{
+.section__contacto__redes_sociales{
     margin-top: 50px;
 }
 
