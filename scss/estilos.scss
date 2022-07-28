@@ -1,37 +1,40 @@
+@import"variables";
+@import"footer";
+
 /* COLORES */
 footer {
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center; 
     border-top: solid 1px white;
 }
 
-footer .footer__texto {
+&__texto {
     text-align: center; 
 }
 
-footer .footer__texto--destacado {
+&__texto--destacado {
     margin-bottom: 5px; 
 } 
 
 h1 {
     font-family: 'Bree Serif', serif;
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center; }
 
 h2 {
-    color: white;
+    color:$color_textos;
     font-family: 'Bree Serif', serif; }
 
 body {
-    background-color: #1a1a1a; }
+    background-color:$color_pagina }
 
 .header__lista {
     list-style: none;
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,27 +42,27 @@ body {
 }
 
 .header__lista__link{
-    color: white;
+    color:$color_textos;
     text-decoration: none;
     font-size: larger;
 }
 
 .navbar-toggler{
-    background-color: white;
+    background-color:$color_textos;
 }
 
   /* ANIMACION MENU */ 
 .header__lista__link:hover {
     transform: scale(1.1, 1.1);
     transition: all 1s;
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center; 
 }
 
 header {
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -112,34 +115,34 @@ li {
     margin: 0 10px 0 10px; }
 
 .texto__contacto {
-    color: white;
+    color:$color_textos;
     font-family: 'Roboto', sans-serif; }
 
 .texto__destacado {
     font-family: 'Roboto', sans-serif;
-    color: white; }
+    color:$color_textos; }
 
 .texto__fotos {
-    color: white;
+    color:$color_textos;
     text-align: center;
     font-family: 'Roboto', sans-serif; }
 
 .texto__redes {
-    color: white;
+    color:$color_textos;
     font-family: 'Roboto', sans-serif; 
 }
 
 .texto__info {
-    color: white;
+    color:$color_textos;
     font-family: 'Roboto', sans-serif; }
 
 .texto__final {
-    color: white;
+    color: $color_textos;
     font-family: 'Roboto', sans-serif;
     text-align: center; }
 
 .texto__principal {
-    color: white;
+    color:$color_textos;
     text-decoration: none;
     font-family: 'Bree Serif', serif; }
 
@@ -183,7 +186,7 @@ li {
 }
 
 .formulario__texto {
-    color: white; }
+    color:$color_textos; }
 
   /* MEDIA DE CELULAR */
 @media (min-width: 320px) and (max-width: 575px) {
@@ -207,7 +210,7 @@ li {
 
 .header__lista {
     list-style: none;
-    color: white;
+    color:$color_textos;
     display: flex;
     justify-content: center;
     align-items: center;
