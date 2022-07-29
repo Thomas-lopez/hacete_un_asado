@@ -149,12 +149,10 @@ li {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.section__contacto__redes_sociales, .section__contacto__informacion {
-  margin: 20px; }
-
-.section__contacto__redes_sociales {
-  margin-top: 50px; }
+  .section__contacto__redes_sociales, .section__contacto_informacion {
+    margin: 20px; }
+  .section__contacto__redes_sociales {
+    margin-top: 50px; }
 
 .formulario__texto {
   color: white; }

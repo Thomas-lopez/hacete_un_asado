@@ -162,14 +162,14 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.section__contacto__redes_sociales, .section__contacto__informacion{
+&__redes_sociales, &_informacion{
     margin: 20px;
 }
 
-.section__contacto__redes_sociales{
+&__redes_sociales{
     margin-top: 50px;
+}
 }
 
 .formulario__texto {
