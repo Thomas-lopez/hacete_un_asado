@@ -8,15 +8,17 @@ footer {
     justify-content: center;
     align-items: center; 
     border-top: solid 1px white;
+
+    &__texto {
+        text-align: center; 
+    }
+    
+    &__texto--destacado {
+        margin-bottom: 5px; 
+    } 
+
 }
 
-&__texto {
-    text-align: center; 
-}
-
-&__texto--destacado {
-    margin-bottom: 5px; 
-} 
 
 h1 {
     font-family: 'Bree Serif', serif;
@@ -39,26 +41,27 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-}
 
-.header__lista__link{
-    color:$color_textos;
-    text-decoration: none;
-    font-size: larger;
+    &__link{
+        color:$color_textos;
+        text-decoration: none;
+        font-size: larger;
+    
+          /* ANIMACION MENU */ 
+        &:hover {
+            transform: scale(1.1, 1.1);
+            transition: all 1s;
+            color:$color_textos;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+    }
+
 }
 
 .navbar-toggler{
     background-color:$color_textos;
-}
-
-  /* ANIMACION MENU */ 
-.header__lista__link:hover {
-    transform: scale(1.1, 1.1);
-    transition: all 1s;
-    color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
 }
 
 header {
@@ -81,10 +84,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
-
-.img__fotos {
-    width: 500px;
-    height: 500px; }
 
 .img__final {
     width: 400px;
@@ -118,14 +117,6 @@ li {
     color:$color_textos;
     font-family: 'Roboto', sans-serif; }
 
-.texto__destacado {
-    font-family: 'Roboto', sans-serif;
-    color:$color_textos; }
-
-.texto__fotos {
-    color:$color_textos;
-    text-align: center;
-    font-family: 'Roboto', sans-serif; }
 
 .texto__redes {
     color:$color_textos;
@@ -154,10 +145,6 @@ li {
 .section__principal__nosotros {
     padding: 0 20px 0 20px; }
 
-.section__fotos {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
 
 .info__contacto {
     justify-content: center;

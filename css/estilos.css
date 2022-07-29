@@ -3,14 +3,23 @@ footer {
   color: white;
   display: flex;
   justify-content: center;
+  align-items: center; }
+  footer .footer__texto {
+    text-align: center; }
+  footer .footer__texto--destacado {
+    margin-bottom: 5px; }
+
+/* COLORES */
+footer {
+  color: white;
+  display: flex;
+  justify-content: center;
   align-items: center;
   border-top: solid 1px white; }
-
-footer .footer__texto {
-  text-align: center; }
-
-footer .footer__texto--destacado {
-  margin-bottom: 5px; }
+  footer__texto {
+    text-align: center; }
+  footer__texto--destacado {
+    margin-bottom: 5px; }
 
 h1 {
   font-family: 'Bree Serif', serif;
@@ -33,23 +42,21 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif; }
-
-.header__lista__link {
-  color: white;
-  text-decoration: none;
-  font-size: larger; }
+  .header__lista__link {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    /* ANIMACION MENU */ }
+    .header__lista__link:hover {
+      transform: scale(1.1, 1.1);
+      transition: all 1s;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 .navbar-toggler {
   background-color: white; }
-
-/* ANIMACION MENU */
-.header__lista__link:hover {
-  transform: scale(1.1, 1.1);
-  transition: all 1s;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
 
 header {
   color: white;
@@ -70,10 +77,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.img__fotos {
-  width: 500px;
-  height: 500px; }
 
 .img__final {
   width: 400px;
@@ -106,15 +109,6 @@ li {
   color: white;
   font-family: 'Roboto', sans-serif; }
 
-.texto__destacado {
-  font-family: 'Roboto', sans-serif;
-  color: white; }
-
-.texto__fotos {
-  color: white;
-  text-align: center;
-  font-family: 'Roboto', sans-serif; }
-
 .texto__redes {
   color: white;
   font-family: 'Roboto', sans-serif; }
@@ -139,11 +133,6 @@ li {
     flex-direction: column; } */
 .section__principal__nosotros {
   padding: 0 20px 0 20px; }
-
-.section__fotos {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
 
 .info__contacto {
   justify-content: center;
