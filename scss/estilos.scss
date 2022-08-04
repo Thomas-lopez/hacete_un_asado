@@ -3,10 +3,8 @@
 
 /* COLORES */
 footer {
+    @extend .flex-centrado;
     color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
     border-top: solid 1px white;
 
     &__texto {
@@ -21,11 +19,10 @@ footer {
 
 
 h1 {
+    @extend .flex-centrado;
     font-family: 'Bree Serif', serif;
     color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+}
 
 h2 {
     color:$color_textos;
@@ -37,9 +34,7 @@ body {
 .header__lista {
     list-style: none;
     color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .flex-centrado;
     font-family: 'Roboto', sans-serif;
 
     &__link{
@@ -52,9 +47,7 @@ body {
             transform: scale(1.1, 1.1);
             transition: all 1s;
             color:$color_textos;
-            display: flex;
-            justify-content: center;
-            align-items: center; 
+            @extend .flex-centrado;
         }
     }
 
@@ -66,9 +59,7 @@ body {
 
 header {
     color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    @extend .flex-centrado;
     border-bottom: solid 1px white;
 }
 
@@ -76,14 +67,11 @@ header {
     width: 500px;
     height: 500px;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    @extend .flex-centrado;
+}
 
 .imagen__principal {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    @extend.flex-centrado; }
 
 .img__final {
     width: 400px;
@@ -108,9 +96,7 @@ header {
 }
 
 li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .flex-centrado;
     margin: 0 10px 0 10px; }
 
 .texto__contacto {
@@ -159,9 +145,7 @@ li {
 }
 
 .section__contacto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .flex-centrado;
 
 &__redes_sociales, &_informacion{
     margin: 20px;
@@ -191,16 +175,14 @@ li {
     width: 100vh;
     height: 100vw;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center; } }
+    @extend .flex-centrado;
+    }
+}
 
 .header__lista {
     list-style: none;
     color:$color_textos;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .flex-centrado;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     flex-wrap: wrap; }
