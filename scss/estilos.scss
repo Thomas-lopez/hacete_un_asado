@@ -17,7 +17,6 @@ footer {
 
 }
 
-
 h1 {
     @extend .flex-centrado;
     font-family: 'Bree Serif', serif;
@@ -29,7 +28,11 @@ h2 {
     font-family: 'Bree Serif', serif; }
 
 body {
-    background-color:$color_pagina }
+    display:grid;
+    min-height:100vh;
+    grid-template-rows:auto 1fr auto;
+    background-color:$color_pagina;
+}
 
 .header__lista {
     list-style: none;
@@ -146,6 +149,7 @@ li {
 
 .section__contacto{
     @extend .flex-centrado;
+    flex-wrap: wrap;
 
 &__redes_sociales, &_informacion{
     margin: 20px;
@@ -177,7 +181,8 @@ li {
     padding: 20px;
     @extend .flex-centrado;
     }
-}
+    }
+
 
 .header__lista {
     list-style: none;
