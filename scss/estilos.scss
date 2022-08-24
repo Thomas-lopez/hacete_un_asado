@@ -1,5 +1,6 @@
 @import"variables";
 @import"footer";
+@import"operadores";
 
 /* COLORES */
 footer {
@@ -14,7 +15,6 @@ footer {
     &__texto--destacado {
         margin-bottom: 5px; 
     } 
-
 }
 
 h1 {
@@ -164,7 +164,7 @@ li {
     color:$color_textos; }
 
   /* MEDIA DE CELULAR */
-@media (min-width: 320px) and (max-width: 575px) {
+@media (min-width) and (max-width: 575px) {
     header {
     justify-content: space-between; }
     .carrousel__fotos {
