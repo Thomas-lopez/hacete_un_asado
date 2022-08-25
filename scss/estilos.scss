@@ -1,6 +1,6 @@
-@import"variables";
-@import"footer";
-@import"operadores";
+@import "operadores";
+@import "variables";
+@import "footer";
 
 /* COLORES */
 footer {
@@ -53,7 +53,6 @@ body {
             @extend .flex-centrado;
         }
     }
-
 }
 
 .navbar-toggler{
@@ -92,10 +91,6 @@ header {
     height: 25px;
     float: left;
     margin-right: 10px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; 
-     */
 }
 
 li {
@@ -126,10 +121,6 @@ li {
     text-decoration: none;
     font-family: 'Bree Serif', serif; }
 
-/* .section__principal {
-    height: 200px;
-    display: flex;
-    flex-direction: column; } */
 
 .section__principal__nosotros {
     padding: 0 20px 0 20px; }
@@ -164,7 +155,7 @@ li {
     color:$color_textos; }
 
   /* MEDIA DE CELULAR */
-@media (min-width) and (max-width: 575px) {
+@media (min-width:320px) and (max-width: 575px) {
     header {
     justify-content: space-between; }
     .carrousel__fotos {
@@ -180,6 +171,11 @@ li {
     height: 100vw;
     padding: 20px;
     @extend .flex-centrado;
+    }
+    .texto__redes{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
     }
     }
 
