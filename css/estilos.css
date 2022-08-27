@@ -9,12 +9,15 @@ footer {
   footer .footer__texto--destacado {
     margin-bottom: 5px; }
 
+/* EXTEND -- EXTENDER CODIGO*/
+.flex-centrado, footer, h1, .header__lista, .header__lista__link:hover, header, .imagen__logo, .imagen__principal, li, .section__contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* COLORES */
 footer {
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-top: solid 1px white; }
   footer__texto {
     text-align: center; }
@@ -24,23 +27,21 @@ footer {
 h1 {
   font-family: 'Bree Serif', serif;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  margin-top: 20px; }
 
 h2 {
   color: white;
   font-family: 'Bree Serif', serif; }
 
 body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
   background-color: #1a1a1a; }
 
 .header__lista {
   list-style: none;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: 'Roboto', sans-serif; }
   .header__lista__link {
     color: white;
@@ -50,32 +51,23 @@ body {
     .header__lista__link:hover {
       transform: scale(1.1, 1.1);
       transition: all 1s;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+      color: white; }
 
 .navbar-toggler {
   background-color: white; }
 
 header {
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-bottom: solid 1px white; }
 
 .imagen__logo {
   width: 500px;
   height: 500px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  padding: 20px; }
 
 .imagen__principal {
-  display: flex;
-  justify-content: center;
+  max-width: 600px;
+  min-height: 600px;
   align-items: center; }
 
 .img__final {
@@ -93,16 +85,9 @@ header {
   width: 25px;
   height: 25px;
   float: left;
-  margin-right: 10px;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; 
-     */ }
+  margin-right: 10px; }
 
 li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 10px 0 10px; }
 
 .texto__contacto {
@@ -127,10 +112,6 @@ li {
   text-decoration: none;
   font-family: 'Bree Serif', serif; }
 
-/* .section__principal {
-    height: 200px;
-    display: flex;
-    flex-direction: column; } */
 .section__principal__nosotros {
   padding: 0 20px 0 20px; }
 
@@ -146,9 +127,7 @@ li {
   margin: 20px; }
 
 .section__contacto {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  flex-wrap: wrap; }
   .section__contacto__redes_sociales, .section__contacto_informacion {
     margin: 20px; }
   .section__contacto__redes_sociales {
@@ -157,8 +136,43 @@ li {
 .formulario__texto {
   color: white; }
 
+.header__lista {
+  list-style: none;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  flex-wrap: wrap; }
+
+.carousel-item {
+  max-height: 450px; }
+
 /* MEDIA DE CELULAR */
-@media (min-width: 320px) and (max-width: 575px) {
+@media (min-width: 320px) and (max-width: 380px) {
+  header {
+    justify-content: space-between; }
+  .texto__principal {
+    font-size: 8px; }
+  .img__cambiar {
+    width: 80%; }
+  .img__final {
+    width: 80%; }
+  .imagen__principal {
+    min-height: 400px; }
+  .imagen__logo {
+    width: 100vh;
+    height: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .texto__info {
+    font-size: x-large; } }
+
+.carousel-item {
+  max-height: 400px; }
+
+/* MEDIA DE CELULAR Iphone*/
+@media (min-width: 381px) and (max-width: 575px) {
   header {
     justify-content: space-between; }
   .carrousel__fotos {
@@ -176,16 +190,6 @@ li {
     display: flex;
     justify-content: center;
     align-items: center; } }
-
-.header__lista {
-  list-style: none;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  flex-wrap: wrap; }
 
 /* MEDIA DE TABLET */
 @media (min-width: 576px) and (max-width: 992px) {

@@ -1,6 +1,6 @@
-@import "operadores";
-@import "variables";
-@import "footer";
+@import"variables";
+@import"footer";
+@import"operadores";
 
 /* COLORES */
 footer {
@@ -21,6 +21,7 @@ h1 {
     @extend .flex-centrado;
     font-family: 'Bree Serif', serif;
     color:$color_textos;
+    margin-top: 20px;
 }
 
 h2 {
@@ -73,7 +74,11 @@ header {
 }
 
 .imagen__principal {
-    @extend.flex-centrado; }
+    @extend.flex-centrado; 
+    max-width: 600px;
+    min-height: 600px;
+    align-items: center;
+}
 
 .img__final {
     width: 400px;
@@ -121,7 +126,6 @@ li {
     text-decoration: none;
     font-family: 'Bree Serif', serif; }
 
-
 .section__principal__nosotros {
     padding: 0 20px 0 20px; }
 
@@ -138,47 +142,23 @@ li {
     margin: 20px;  
 }
 
+
+
 .section__contacto{
     @extend .flex-centrado;
     flex-wrap: wrap;
 
-&__redes_sociales, &_informacion{
-    margin: 20px;
-}
+    &__redes_sociales, &_informacion{
+        margin: 20px;
+    }
 
-&__redes_sociales{
-    margin-top: 50px;
-}
+    &__redes_sociales{
+        margin-top: 50px;
+    }
 }
 
 .formulario__texto {
     color:$color_textos; }
-
-  /* MEDIA DE CELULAR */
-@media (min-width:320px) and (max-width: 575px) {
-    header {
-    justify-content: space-between; }
-    .carrousel__fotos {
-    height: 220px; }
-    .texto__principal {
-    font-size: 8px; }
-    .img__cambiar {
-    width: 80%; }
-    .img__final {
-    width: 80%; }
-    .imagen__logo {
-    width: 100vh;
-    height: 100vw;
-    padding: 20px;
-    @extend .flex-centrado;
-    }
-    .texto__redes{
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: larger;
-    }
-    }
-
 
 .header__lista {
     list-style: none;
@@ -186,9 +166,85 @@ li {
     @extend .flex-centrado;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
-    flex-wrap: wrap; }
+    flex-wrap: wrap; 
+}
+
+.carousel-item{
+    max-height: 450px;
+}
+
+/* MEDIA DE CELULAR */
+@media (min-width: 320px) and (max-width: 380px) {
+    
+    header {
+        justify-content: space-between; 
+    }
+    .texto__principal {
+        font-size: 8px; 
+    }
+    .img__cambiar {
+        width: 80%; 
+    }
+    .img__final {
+        width: 80%; 
+    }
+
+    .imagen__principal{
+        min-height: 400px;
+    }
+    .imagen__logo {
+        width: 100vh;
+        height: 100vw;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .texto__info{
+        font-size: x-large;
+    }
+}
+
+.carousel-item{
+    max-height: 400px;
+}
+
+
+/* MEDIA DE CELULAR Iphone*/
+@media (min-width: 381px) and (max-width: 575px) {
+    
+    header {
+        justify-content: space-between; 
+    }
+    .carrousel__fotos {
+        height: 220px; 
+    }
+    .texto__principal {
+        font-size: 8px; 
+    }
+    .img__cambiar {
+        width: 80%; 
+    }
+    .img__final {
+        width: 80%; 
+    }
+
+    .imagen__logo {
+        width: 100vh;
+        height: 100vw;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
 
   /* MEDIA DE TABLET */
 @media (min-width: 576px) and (max-width: 992px) {
     .img__cambiar {
-    width: 80%; } }
+        width: 80%; 
+    } 
+}

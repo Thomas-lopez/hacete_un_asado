@@ -53,53 +53,80 @@
             </nav>
         </header>
         <main>
-            <hr>
             <h1>Nuestras imágenes</h1>
             <section class="section__principal__fotos">
                 <div>
                     <p class="texto__final">Te mostramos nuestro contenido de producción propia </p>
                 </div>
             </section>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="../recursos/asado.jpeg " class="carrousel__fotos d-block w-50 mx-auto" alt="Asado">
+            <div class="row justify-content-md-center m-0 mb-5">
+                <div class="col-lg-4">
+                    <div class="text-center">
+                        <blockquote class="blockquote">
+                            <p class="texto__redes">Asado</p>
+                        </blockquote>
                     </div>
-                    <div class="carousel-item">
-                    <img src="../recursos/chinchulines.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Chinchulines">
+                    <div id="carrouselAchuras" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carrouselAchuras" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carrouselAchuras" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carrouselAchuras" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../recursos/asado.jpeg" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../recursos/costilla.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../recursos/matambre.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrouselAchuras" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrouselAchuras" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="../recursos/chorizo-morcilla.jpeg" class="carrousel__fotos d-block w-50 mx-auto" alt="Chorizos y Morcilla">
+                <div class="col-lg-4">
+                    <div class="text-center">
+                        <blockquote class="blockquote">
+                            <p class="texto__redes">Achuras</p>
+                        </blockquote>
+                    </div>
+                    <div id="carrouselAsado" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carrouselAsado" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carrouselAsado" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carrouselAsado" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../recursos/chinchulines.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../recursos/chorizo-morcilla.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../recursos/mollejas.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrouselAsado" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrouselAsado" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="../recursos/costilla.jpg" class="carrousel__fotos d-block w-50 mx-auto" alt="Costilla">
-                </div>
-                <div class="carousel-item">
-                    <img src="../recursos/matambre.jpeg" class="carrousel__fotos  d-block w-50 mx-auto" alt="Matambre a la pizza">
-                </div>
-                <div class="carousel-item">
-                    <img src="../recursos/mate-asado.jpg" class="carrousel__fotos  d-block w-50 mx-auto" alt="Mate y asado">
-                </div>
-                <div class="carousel-item">
-                    <img src="../recursos/mollejas.jpeg" class="carrousel__fotos  d-block w-50 mx-auto" alt="Mollejas">
-                </div>
-                <div class="carousel-item">
-                    <img src="../recursos/picada.jpeg" class="carrousel__fotos  d-block w-50 mx-auto" alt="Tabla de picada">
-                </div>
-                <div class="carousel-item">
-                    <img src="../recursos/tabla-achuras.jpg" class="img-fluid carrousel__fotos d-block w-50 mx-auto" alt="Tabla de achuras">
-                </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
             </div>
-            <hr>
         </main>
         <footer>
             <ul class="footer__texto">
