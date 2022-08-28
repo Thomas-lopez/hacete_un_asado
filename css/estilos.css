@@ -77,10 +77,6 @@ header {
   display: block;
   margin: 0px auto; }
 
-.img__cambiar {
-  display: block;
-  margin: 0px auto; }
-
 .texto__contacto__img {
   width: 25px;
   height: 25px;
@@ -193,3 +189,8 @@ li {
 @media (min-width: 576px) and (max-width: 992px) {
   .carousel-item {
     max-height: 450px; } }
+
+.texto__redes {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: smaller; }
