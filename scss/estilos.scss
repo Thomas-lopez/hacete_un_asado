@@ -87,10 +87,6 @@ header {
     display: block;
     margin: 0px auto; }
 
-.img__cambiar {
-    display: block;
-    margin: 0px auto; }
-
 .texto__contacto__img {
     width: 25px;
     height: 25px;
@@ -217,9 +213,7 @@ li {
     header {
         justify-content: space-between; 
     }
-    .carrousel__fotos {
-        height: 220px; 
-    }
+
     .texto__principal {
         font-size: 8px; 
     }
@@ -244,7 +238,9 @@ li {
 
   /* MEDIA DE TABLET */
 @media (min-width: 576px) and (max-width: 992px) {
-    .img__cambiar {
-        width: 80%; 
-    } 
+.carousel-item{
+    max-height: 450px;
+    }
+    
 }
+

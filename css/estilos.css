@@ -175,8 +175,6 @@ li {
 @media (min-width: 381px) and (max-width: 575px) {
   header {
     justify-content: space-between; }
-  .carrousel__fotos {
-    height: 220px; }
   .texto__principal {
     font-size: 8px; }
   .img__cambiar {
@@ -193,5 +191,5 @@ li {
 
 /* MEDIA DE TABLET */
 @media (min-width: 576px) and (max-width: 992px) {
-  .img__cambiar {
-    width: 80%; } }
+  .carousel-item {
+    max-height: 450px; } }
