@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Cuchillo",
+        "precio": 6000,
+        "imagen": "https://estiloaustral.com/wp-content/uploads/2022/08/ERCOMB1126-CUCHILLAS-No26-COMBINADOS-ASTA-2.jpg"
+
+    },
+    {
+        "id": 2,
+        "nombre": "Tabla asador mediana",
+        "precio": 3000,
+        "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/278/346/products/6c1caad5-ec34-4d13-a4ae-f4e4d65fd301_nube-b74f75a92ceb1cc52116007861301417-1024-1024.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Asador",
+        "precio": 7000,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfo5nsrdheTDoNESuG3siV1U3DByzX0xyIWg&usqp=CAU"
+    }
+
+]
