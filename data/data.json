@@ -1,22 +1,39 @@
 [
     {
         "id": 1,
-        "nombre": "Cuchillo",
+        "nombre": "Cuchillo criollo",
         "precio": 6000,
-        "imagen": "https://estiloaustral.com/wp-content/uploads/2022/08/ERCOMB1126-CUCHILLAS-No26-COMBINADOS-ASTA-2.jpg"
+        "imagen": "https://www.firechile.cl/wp-content/uploads/2022/07/CUCHILLOS-GAUCHOS-SETTER-FIRE-FIRECHILE-FYRE-CRIOLLO-COMBINADO-4.jpeg"
 
     },
     {
         "id": 2,
-        "nombre": "Tabla asador mediana",
-        "precio": 3000,
+        "nombre": "Tabla asador grande",
+        "precio": 5300,
         "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/278/346/products/6c1caad5-ec34-4d13-a4ae-f4e4d65fd301_nube-b74f75a92ceb1cc52116007861301417-1024-1024.jpg"
     },
     {
         "id": 3,
-        "nombre": "Asador",
+        "nombre": "Brasero",
         "precio": 7000,
-        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfo5nsrdheTDoNESuG3siV1U3DByzX0xyIWg&usqp=CAU"
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_803620-MLA43332122732_092020-O.webp"
+    },
+    {
+        "id": 4,
+        "nombre": "Fogonero 1,2m: Asador, Disco y Parrila",
+        "precio": 20000,
+        "imagen": "https://farriery.com.ar/wp-content/uploads/2019/09/Fogonero-1.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Plancheta de hierro",
+        "precio": 7500,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_649026-MLA50376684446_062022-V.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Provoletera de fundicion",
+        "precio": 3400,
+        "imagen": "https://cdnx.jumpseller.com/maunabbq/image/20248853/resize/640/640?1640713117"
     }
-
 ]

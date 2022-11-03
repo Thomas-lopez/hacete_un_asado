@@ -1,3 +1,6 @@
+/* ICONOS BOSTRAP */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 /* COLORES */
 footer {
   color: white;
@@ -94,6 +97,10 @@ header {
   width: 500px;
   height: 500px;
   padding: 20px;
+}
+.img__tienda{
+height: 15vw;
+margin-top: 1rem;
 }
 
 .imagen__principal {

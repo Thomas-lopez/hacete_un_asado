@@ -23,54 +23,69 @@
     <link rel="stylesheet" href="../css/estilos.css">
     <title>Tienda HUA</title>
 </head>
-<header>
-    <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">
-                <h2>HACETE UN ASADO</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav header__lista">
-                    <li class="nav-item">
-                        <a class="nav-link header__lista__link" href="../paginas/tienda.html"> Tienda </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header__lista__link" href="../paginas/contacto.html"> Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header__lista__link" href="../paginas/fotos.html"> Fotos </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header__lista__link" href="../paginas/tips.html"> Tips </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header__lista__link" href="../paginas/sobre-nosotros.html"> Sobre Nosotros
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 
 <body>
-    <ul id="listaItems">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <h2>HACETE UN ASADO</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav header__lista">
+                        <li class="nav-item">
+                            <a class="nav-link header__lista__link" href="../paginas/tienda.html"> Tienda </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header__lista__link" href="../paginas/contacto.html"> Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header__lista__link" href="../paginas/fotos.html"> Fotos </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header__lista__link" href="../paginas/tips.html"> Tips </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header__lista__link" href="../paginas/sobre-nosotros.html"> Sobre
+                                Nosotros
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1 class="texto__info">Productos</h1>
+        </section>
+        <section>
+            <div class="row justify-content-md-center m-5 d-flex justify-content-center ">
+                <div class="col-lg-3 d-flex ">
+                    <input class="form-control" type="text" id="inputBuscador">
+                    <button class="btn btn-outline-light mx-2" id="botonBuscar"> <i class="bi bi-search fs-6"></i> </button>
+                    <button  class="btn btn-outline-light"  id="boton"> <i class="bi bi-cart"></i> </button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row m-3" style="justify-content: center;" id="listaItems"></div>
+        </section>
 
-    </ul>
-
-    <div id="div"></div>
-
-    <input type="text" id="inputBuscador">
-    <button id="botonInpunt"> Buscar </button>
-    <div>
-        <button id="boton"> Mostrar en el carrito</button>
-    </div>
+    </main>
+    <footer>
+        <ul class="footer__texto">
+            <li>
+                <p class="foteer__texto--destacado">Esta web fue creada por: Thomas Lopez. Copyright © 2022</p>
+            </li>
+        </ul>
+    </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./tienda.js"></script>
+    <script src="../js/tienda.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -80,7 +95,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
