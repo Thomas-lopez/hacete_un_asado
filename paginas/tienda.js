@@ -1,6 +1,6 @@
 const div = document.getElementById("div")
 const listadoItems = document.getElementById("listaItems")
-const boton = document.getElementById("boton")
+const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonInput = document.getElementById("botonInpunt")
 
@@ -32,7 +32,7 @@ const buscarProducto = (string) => {
     inputBuscador.value = ''
 }
 
-boton.addEventListener("click", () => console.log(carrito))
+botonCarrito.addEventListener("click", () => console.log(carrito))
 
 botonInput.addEventListener("click", () => buscarProducto(inputBuscador.value))
 
@@ -40,19 +40,19 @@ localStorage.setItem("carrito", JSON.stringify(productos));
 
 /* Eliminar producto */
 const eliminar = (nombre) => {
-let carrito = JSON.parse(localStorage.getItem("carrito"));
-carrito = carrito.filter(item => item.nombre != nombre);
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
+    carrito = carrito.filter(item => item.nombre != nombre);
 
-localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-boton.addEventListener("click", () => {
-Swal.fire({
-    title: "Genial!",
-    text: "Has agregado el producto al carrito!",
-    icon: "success",
-    confirmButtonText: "Aceptar",
-});
+botonCarrito.addEventListener("click", () => {
+    Swal.fire({
+        title: "Genial!",
+        text: "Has agregado el producto al carrito!",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+    });
 }); 
 
 const pedirPosts = async () => {
@@ -71,7 +71,7 @@ const pedirPosts = async () => {
                     <div class="card-body">
                         <h5 class="card-title">${post.nombre}</h5>
                         <p class="card-text"> ${post.precio}</a>
-                        <button id= ${post.id}> Comprar </button>
+                        <button id="botonComprar_${post.id}"> Comprar </button>
                     </div>
             </div>
         `
