@@ -1,5 +1,5 @@
 const listadoItems = document.getElementById("listaItems")
-const boton = document.getElementById("boton")
+const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonBuscar = document.getElementById("botonBuscar")
 
@@ -38,7 +38,7 @@ const buscarProducto = (string) => {
     inputBuscador.value = ''
 }
 
-boton.addEventListener("click", () => console.log(carrito))
+botonCarrito.addEventListener("click", () => console.log(carrito))
 botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
 localStorage.setItem("carrito", JSON.stringify(productos));
 
@@ -49,15 +49,15 @@ const eliminar = (nombre) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-boton.addEventListener("click", () => {
+/* botonCarrito.addEventListener("click", () => {
     Swal.fire({
         title: "Genial!",
         text: "Has agregado el producto al carrito!",
         icon: "success",
         confirmButtonText: "Aceptar",
     });
-}); 
-
+});
+ */
 const pedirPosts = async () => {
     const resp = await fetch('../data/data.json')
     const data = await resp.json()
@@ -78,7 +78,18 @@ const pedirPosts = async () => {
             </div>
         `
         listadoItems.append(itemTienda)
-        
+
+        let botonComprar = document.getElementById(post.id)
+        botonComprar.addEventListener("click", () => console.log(post.id))
+        botonComprar.addEventListener("click", () => {
+            Swal.fire({
+                title: "Genial!",
+                text: "Has agregado el producto al carrito!",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            });
+        });
+
     })
 }
 
