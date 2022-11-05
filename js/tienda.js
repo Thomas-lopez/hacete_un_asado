@@ -3,9 +3,12 @@ const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonBuscar = document.getElementById("botonBuscar")
 
-
 let productos = []
 let carrito = []
+
+botonCarrito.addEventListener("click", () => console.log(carrito))
+botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
+localStorage.setItem("carrito", JSON.stringify(productos));
 
 const comprarProducto = (producto) => {
     let productoExsiste = carrito.find(item => item.id === producto.id)
@@ -37,10 +40,6 @@ const buscarProducto = (string) => {
     inputBuscador.value = ''
 }
 
-botonCarrito.addEventListener("click", () => console.log(carrito))
-botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
-localStorage.setItem("carrito", JSON.stringify(productos));
-
 /* Eliminar producto */
 const eliminar = (nombre) => {
     let carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -48,7 +47,7 @@ const eliminar = (nombre) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-const pedirPosts = async () => {
+const iniciarTienda = async () => {
     const resp = await fetch('../data/data.json')
     const data = await resp.json()
 
@@ -85,5 +84,4 @@ const pedirPosts = async () => {
     })
 }
 
-
-pedirPosts()
+iniciarTienda()
