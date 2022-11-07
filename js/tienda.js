@@ -2,6 +2,7 @@ const listadoItems = document.getElementById("listaItems")
 const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonBuscar = document.getElementById("botonBuscar")
+const carritoNoPop = document.getElementById("CarritoNoPopUP")
 
 let productos = []
 let carrito = []
@@ -31,9 +32,8 @@ const buscarProducto = (string) => {
 }
 
 const eliminarProducto = (nombre) => {
-    let carrito = JSON.parse(localStorage.getItem("carrito"));
     carrito = carrito.filter(item => item.nombre != nombre);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    iniciarCarrito()
 }
 
 const iniciarTienda = async () => {
@@ -45,6 +45,7 @@ const iniciarTienda = async () => {
         const itemTienda = document.createElement('div')
         itemTienda.classList.add('col-lg-3', 'card', 'm-2')
 
+        // TODO acomodar el item card-text
         itemTienda.innerHTML = `
             <img class="card-img-top img__tienda" src="${producto.imagen}" alt="Card image cap">
             <div class="card-body">
@@ -58,6 +59,8 @@ const iniciarTienda = async () => {
         let botonComprar = document.getElementById(producto.id)
 
         botonComprar.addEventListener("click", () => {
+
+            limpiarCarrito()
 
             Swal.fire({
                 title: "Genial!",
@@ -73,82 +76,101 @@ const iniciarTienda = async () => {
 iniciarTienda()
 
 botonCarrito.addEventListener("click", () => {
-    
-    console.log(carrito)
-    
-    let swal_html = ``
+    iniciarCarrito()
+})
 
-    // si el carrito esta vacio
+const limpiarCarrito = () => {
+    carritoNoPop.innerHTML = "";
+}
+
+const iniciarCarrito = async() => {
+    let cantidadProductos = 0
+    let precioTotal = 0
+    limpiarCarrito()
+
     if(carrito.length == 0){
-        swal_html = swal_html + `
-            El carrito esta vacio.
-        `
-
-        Swal.fire({
-            title: "Carrito",
-            html: swal_html,        
-            confirmButtonText: "OK",
-        })
+        const itemCarrito = document.createElement('div')
+        itemCarrito.classList.add('texto__info')
+        itemCarrito.innerHTML = 'carrito vacio'
+        carritoNoPop.append(itemCarrito)
+        setTimeout(limpiarCarrito, 3000)
     }
-    // si el carrito tiene data
-    else {
-        swal_html = swal_html + `
-            <table  class="table table-responsive table-striped">
+    else{
+        carrito.forEach((producto) => {
+            const itemCarrito = document.createElement('div')
+            itemCarrito.classList.add('texto__info')
+            
+            itemCarrito.innerHTML = `
+            <table  class="table table-responsive texto__info" style="color:white">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-        `
-
-        carrito.forEach((producto) => {
-
-            console.log(producto.nombre)
-
-        })
-
-
-        swal_html = swal_html + `
-            <tr>
-                <td>1</td>
-                <td>Dakota Rice</td>
-                <td>Niger</td>
-                <td>$36,738</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Minerva Hooper</td>
-                <td>Curaçao</td>
-                <td>$36,738</td>
-            </tr>
-        `
-
-        swal_html = swal_html + `
-            </tbody>
+                <tr>
+                    <td class="texto__info">${producto.id}</td>
+                    <td class="texto__info">${producto.nombre}</td>
+                    <td class="texto__info">${producto.cantidad}</td>
+                    <td class="texto__info">${producto.precio}</td>
+                    <td class="texto__info"><button id="${"btnQuitar" + producto.id}"class="btn btn-outline-light"> <i class="bi bi-trash"></i> </button></td>
+                </tr>
+                </tbody>
             </table>
-        `
+            `
 
+            carritoNoPop.append(itemCarrito)
+            let botonQuitarItemCarrito = document.getElementById("btnQuitar" + producto.id)
+            
+            botonQuitarItemCarrito.addEventListener("click", () => {
 
-        Swal.fire({
-            title: "Carrito",
-            html: swal_html,        
-            confirmButtonText: "Hacer Perdido",
+                Swal.fire({
+                    title: "Genial!",
+                    text: "Vas a eliminar "+producto.nombre+" del carrito!", 
+                    icon: "warning",
+                    confirmButtonText: "Aceptar",
+                })
+                eliminarProducto(producto.nombre)
+            });
         })
-        .then((result) => {
-            Swal.fire({
-                title: "Genial!",
-                text: "Le vamo a estar mandando un mail, para enviarle los productos.", 
-                icon: "success",
-                confirmButtonText: "Aceptar",
-            })
-        })
+
+        const botonesCarrito = document.createElement('div')
+        botonesCarrito.innerHTML = `<p> Cantidad de Productos: `+ cantidadProductos+ `</p>
+        <p> Precio Total: ` + precioTotal +` </p>`
+
+        carritoNoPop.append(botonesCarrito)
+
     }
+}
+
+
+botonComprar.addEventListener("click", () => {
 
     
+// usar esto para agregar al boton de "comprar del carrito que tenes que agregar"
+
+    Swal.fire({
+        title: "Carrito",
+        width: 600,
+        html: swal_html,
+        //  agregar boton de cancelar
+        //  agregar cancelar al hacer click afuera de la pantalla
+        confirmButtonText: "Hacer Perdido (agregar boton de cancelar)",
+    })
+    .then((result) => {
+        Swal.fire({
+            title: "Genial!",
+            text: "Le vamo a estar mandando un mail, para enviarle los productos.", 
+            icon: "success",
+            confirmButtonText: "Aceptar",
+        })
+    })
+
 })
+
 
 botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
