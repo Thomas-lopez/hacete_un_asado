@@ -3,6 +3,7 @@ const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonBuscar = document.getElementById("botonBuscar")
 const carritoNoPop = document.getElementById("CarritoNoPopUP")
+const botonAceptar = document.getElementById("botonAceptar")
 
 let productos = []
 let carrito = []
@@ -52,6 +53,9 @@ const iniciarTienda = async () => {
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text"> $${producto.precio}</a>
                 <button id= ${producto.id} type="button" class="btn btn-outline-dark">Comprar</button>
+            </div>
+            <div class="row m-3" style="justify-content: center; color:white" id="CarritoNoPopUP">
+                <button type="button" class="btn btn-green" id="botonAceptar"></button>
             </div>
         `
         listadoItems.append(itemTienda)
@@ -122,7 +126,6 @@ const iniciarCarrito = async() => {
                 </tbody>
             </table>
             `
-
             carritoNoPop.append(itemCarrito)
             let botonQuitarItemCarrito = document.getElementById("btnQuitar" + producto.id)
             
@@ -141,6 +144,8 @@ const iniciarCarrito = async() => {
         const botonesCarrito = document.createElement('div')
         botonesCarrito.innerHTML = `<p> Cantidad de Productos: `+ cantidadProductos+ `</p>
         <p> Precio Total: ` + precioTotal +` </p>`
+        botonAceptar.innerHTML = "<button id=botonAceptar></button>"
+        
 
         carritoNoPop.append(botonesCarrito)
 
@@ -157,8 +162,8 @@ botonComprar.addEventListener("click", () => {
         title: "Carrito",
         width: 600,
         html: swal_html,
-        //  agregar boton de cancelar
-        //  agregar cancelar al hacer click afuera de la pantalla
+        // TODO, agregar boton de cancelar
+        // TODO, agregar cancelar al hacer click afuera de la pantalla
         confirmButtonText: "Hacer Perdido (agregar boton de cancelar)",
     })
     .then((result) => {
