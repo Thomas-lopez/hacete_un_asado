@@ -3,12 +3,11 @@ const botonCarrito = document.getElementById("botonCarrito")
 const inputBuscador = document.getElementById("inputBuscador")
 const botonBuscar = document.getElementById("botonBuscar")
 const carritoNoPop = document.getElementById("CarritoNoPopUP")
-const botonAceptar = document.getElementById("botonAceptar")
 
 let productos = []
 let carrito = []
 
-localStorage.setItem("carrito", JSON.stringify(productos));
+carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 const comprarProducto = (producto) => {
     let productoExsiste = carrito.find(item => item.id === producto.id)
@@ -24,12 +23,14 @@ const comprarProducto = (producto) => {
             cantidad: 1
         })
     }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 const buscarProducto = (string) => {
 
-    let productoBuscado = productos.find(producto => producto.nombre === string);
+    let productoBuscado = productos.filter(producto => producto.nombre === string);
     inputBuscador.value = ''
+    renderizarTienda(productoBuscado)
 }
 
 const eliminarProducto = (nombre) => {
@@ -40,8 +41,99 @@ const eliminarProducto = (nombre) => {
 const iniciarTienda = async () => {
     const resp = await fetch('../data/data.json')
     const data = await resp.json()
+    renderizarTienda (data)
+    productos = data
+}
 
-    data.forEach((producto) => {
+iniciarTienda()
+
+botonCarrito.addEventListener("click", () => {
+    iniciarCarrito()
+}) 
+
+const limpiarCarrito = () => {
+    carritoNoPop.innerHTML = "";
+}
+
+const iniciarCarrito = async() => {
+    let cantidadProductos = 0
+    let precioTotal = 0
+    limpiarCarrito()
+
+    if(carrito.length == 0){
+        const itemCarrito = document.createElement('div')
+        itemCarrito.classList.add('texto__info')
+        itemCarrito.innerHTML = 'carrito vacio'
+        carritoNoPop.append(itemCarrito)
+        setTimeout(limpiarCarrito, 3000)
+    } 
+    else{
+        carrito.forEach((producto) => {
+            const itemCarrito = document.createElement('div')
+            itemCarrito.classList.add('texto__info')
+            
+            itemCarrito.innerHTML = `
+            <table  class="table table-responsive texto__info" style="color:white">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="texto__info">${producto.nombre}</td>
+                    <td class="texto__info">${producto.cantidad}</td>
+                    <td class="texto__info">${producto.precio}</td>
+                    <td class="texto__info"><button id="${"btnQuitar" + producto.id}"class="btn btn-outline-light"> <i class="bi bi-trash"></i> </button></td>
+                </tr>
+                </tbody>
+            `
+            carritoNoPop.append(itemCarrito)
+            let botonQuitarItemCarrito = document.getElementById("btnQuitar" + producto.id)
+            
+            botonQuitarItemCarrito.addEventListener("click", () => {
+            
+
+                Swal.fire({
+                    title: "Genial!",
+                    text: "Vas a eliminar "+producto.nombre+" del carrito!", 
+                    icon: "warning",
+                    confirmButtonText: "Aceptar",
+                })
+                eliminarProducto(producto.nombre)
+            });
+        })
+
+        const botonesCarrito = document.createElement('div')
+        carritoNoPop.append(botonesCarrito)
+        botonesCarrito.innerHTML = 
+        ` <button type="button" class="btn btn-outline-light " id="botonAceptar"> Realizar compra </button>`
+        const botonAceptar = document.getElementById("botonAceptar")
+
+        botonAceptar.addEventListener("click", (event) => {
+            event.preventDefault()
+            Swal.fire({
+                title: "GRACIAS POR SU COMPRA",
+                text: "Se ha realizado con éxito", 
+                icon: "success",
+                confirmButtonText: "Aceptar",
+
+            })
+            localStorage.clear()
+            
+            carrito = [] 
+            limpiarCarrito()
+        })
+        
+
+    }
+}
+let renderizarTienda = (productos) =>{
+    listadoItems.innerHTML= ""
+    productos.forEach((producto) => {
 
         const itemTienda = document.createElement('div')
         itemTienda.classList.add('col-lg-3', 'card', 'm-2')
@@ -73,88 +165,4 @@ const iniciarTienda = async () => {
         });
     })
 }
-
-iniciarTienda()
-
- botonCarrito.addEventListener("click", () => {
-    iniciarCarrito()
-}) 
-
-const limpiarCarrito = () => {
-    carritoNoPop.innerHTML = "";
-}
-
-const iniciarCarrito = async() => {
-    let cantidadProductos = 0
-    let precioTotal = 0
-    limpiarCarrito()
-
-    if(carrito.length == 0){
-        const itemCarrito = document.createElement('div')
-        itemCarrito.classList.add('texto__info')
-        itemCarrito.innerHTML = 'carrito vacio'
-        carritoNoPop.append(itemCarrito)
-        setTimeout(limpiarCarrito, 3000)
-    }
-    else{
-        carrito.forEach((producto) => {
-            const itemCarrito = document.createElement('div')
-            itemCarrito.classList.add('texto__info')
-            
-            itemCarrito.innerHTML = `
-            <table  class="table table-responsive texto__info" style="color:white">
-                <thead>
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="texto__info">${producto.id}</td>
-                    <td class="texto__info">${producto.nombre}</td>
-                    <td class="texto__info">${producto.cantidad}</td>
-                    <td class="texto__info">${producto.precio}</td>
-                    <td class="texto__info"><button id="${"btnQuitar" + producto.id}"class="btn btn-outline-light"> <i class="bi bi-trash"></i> </button></td>
-                </tr>
-                </tbody>
-            `
-            carritoNoPop.append(itemCarrito)
-            let botonQuitarItemCarrito = document.getElementById("btnQuitar" + producto.id)
-            
-            botonQuitarItemCarrito.addEventListener("click", () => {
-            
-
-                Swal.fire({
-                    title: "Genial!",
-                    text: "Vas a eliminar "+producto.nombre+" del carrito!", 
-                    icon: "warning",
-                    confirmButtonText: "Aceptar",
-                })
-                eliminarProducto(producto.nombre)
-            });
-        })
-
-        const botonesCarrito = document.createElement('div')
-        carritoNoPop.append(botonesCarrito)
-        botonesCarrito.innerHTML = 
-        ` <button type="button"class="btn btn-outline-light" id="botonAceptar">Realizar compra</button>`
-        
-        botonAceptar.addEventListener("click", () => {
-            Swal.fire({
-                title: "Genial!",
-                text: "Realizo su compra con exito !", 
-                icon: "success",
-                confirmButtonText: "Aceptar",
-
-            })
-        })
-        
-
-    }
-}
-
 botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
