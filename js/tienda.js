@@ -46,7 +46,6 @@ const iniciarTienda = async () => {
         const itemTienda = document.createElement('div')
         itemTienda.classList.add('col-lg-3', 'card', 'm-2')
 
-        // TODO acomodar el item card-text
         itemTienda.innerHTML = `
             <img class="card-img-top img__tienda" src="${producto.imagen}" alt="Card image cap">
             <div class="card-body">
@@ -54,9 +53,7 @@ const iniciarTienda = async () => {
                 <p class="card-text"> $${producto.precio}</a>
                 <button id= ${producto.id} type="button" class="btn btn-outline-dark">Comprar</button>
             </div>
-            <div class="row m-3" style="justify-content: center; color:white" id="CarritoNoPopUP">
-                <button type="button" class="btn btn-green" id="botonAceptar"></button>
-            </div>
+            
         `
         listadoItems.append(itemTienda)
 
@@ -79,9 +76,9 @@ const iniciarTienda = async () => {
 
 iniciarTienda()
 
-botonCarrito.addEventListener("click", () => {
+ botonCarrito.addEventListener("click", () => {
     iniciarCarrito()
-})
+}) 
 
 const limpiarCarrito = () => {
     carritoNoPop.innerHTML = "";
@@ -124,12 +121,12 @@ const iniciarCarrito = async() => {
                     <td class="texto__info"><button id="${"btnQuitar" + producto.id}"class="btn btn-outline-light"> <i class="bi bi-trash"></i> </button></td>
                 </tr>
                 </tbody>
-            </table>
             `
             carritoNoPop.append(itemCarrito)
             let botonQuitarItemCarrito = document.getElementById("btnQuitar" + producto.id)
             
             botonQuitarItemCarrito.addEventListener("click", () => {
+            
 
                 Swal.fire({
                     title: "Genial!",
@@ -142,40 +139,22 @@ const iniciarCarrito = async() => {
         })
 
         const botonesCarrito = document.createElement('div')
-        botonesCarrito.innerHTML = `<p> Cantidad de Productos: `+ cantidadProductos+ `</p>
-        <p> Precio Total: ` + precioTotal +` </p>`
-        botonAceptar.innerHTML = "<button id=botonAceptar></button>"
-        
-
         carritoNoPop.append(botonesCarrito)
+        botonesCarrito.innerHTML = 
+        ` <button type="button"class="btn btn-outline-light" id="botonAceptar">Realizar compra</button>`
+        
+        botonAceptar.addEventListener("click", () => {
+            Swal.fire({
+                title: "Genial!",
+                text: "Realizo su compra con exito !", 
+                icon: "success",
+                confirmButtonText: "Aceptar",
+
+            })
+        })
+        
 
     }
 }
-
-
-botonComprar.addEventListener("click", () => {
-
-    
-// usar esto para agregar al boton de "comprar del carrito que tenes que agregar"
-
-    Swal.fire({
-        title: "Carrito",
-        width: 600,
-        html: swal_html,
-        // TODO, agregar boton de cancelar
-        // TODO, agregar cancelar al hacer click afuera de la pantalla
-        confirmButtonText: "Hacer Perdido (agregar boton de cancelar)",
-    })
-    .then((result) => {
-        Swal.fire({
-            title: "Genial!",
-            text: "Le vamo a estar mandando un mail, para enviarle los productos.", 
-            icon: "success",
-            confirmButtonText: "Aceptar",
-        })
-    })
-
-})
-
 
 botonBuscar.addEventListener("click", () => buscarProducto(inputBuscador.value))
